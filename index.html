@@ -4,47 +4,22 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>Testiframe by cbmeeks</title>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width">
 
 
   <script language="javascript">
     
-    function ajaxRequest(){
-     var activexmodes=["Msxml2.XMLHTTP", "Microsoft.XMLHTTP"]; //activeX versions to check for in IE
-     if (window.ActiveXObject){ //Test for support for ActiveXObject in IE first (as XMLHttpRequest in IE7 is broken)
-      for (var i=0; i<activexmodes.length; i++){
-       try{
-        return new ActiveXObject(activexmodes[i]);
-       }
-       catch(e){
-        //suppress error
-       }
-      }
-     }
-     else if (window.XMLHttpRequest) // if Mozilla, Safari etc
-      return new XMLHttpRequest();
-     else
-      return false;
-}
-    
-function login(){
-    var mygetrequest=new ajaxRequest();
-    mygetrequest.onreadystatechange=function(){
-     if (mygetrequest.readyState==4){
-      if (mygetrequest.status==200 || window.location.href.indexOf("http")==-1){
-       document.getElementById("result").innerHTML = mygetrequest.responseText;
-      }
-      else{
-       alert("An error has occured making the request");
-      }
-     }
-    }
-    var userId = 'blah';
-    var password = 'goofy';
-    mygetrequest.open("POST", "https://test.kencogroup.com/cecil/sims/sf-login?username="+userId+"&password="+password+"&repEmail=cecil.meeks@kencogroup.com&salesOpportunity=006c000000EQNWwAAP", true);
-    mygetrequest.send(null);
-}
+   
+  function login(){
+    $.post( 
+                  "https://test.kencogroup.com/cecil/sims/sf-login",
+                  { username: "blah", password:"goofy", "repEmail":"cecil.meeks@kencogroup.com","salesOpportunity":"006c000000EQNWwAAP" },
+                  function(data) {
+                     console.log(data);
+                  }
+               );
+  }
     
   </script>
 
