@@ -12,7 +12,17 @@
     
   function login(){
     console.log('start');
-    
+    $.ajax({
+    url:"https://test.kencogroup.com/cecil/sims/sf-login",
+    dataType: 'jsonp', 
+
+    success:function(json){
+        $('#ilogin').refresh();
+    },
+    error:function(){
+        alert("Error");
+    }      
+});
 
     
     console.log('end');
