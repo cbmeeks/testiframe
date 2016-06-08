@@ -12,6 +12,7 @@
     
    
   function login(){
+    console.log('start');
     $.post( 
                   "https://test.kencogroup.com/cecil/sims/sf-login",
                   { username: "blah", password:"goofy", "repEmail":"cecil.meeks@kencogroup.com","salesOpportunity":"006c000000EQNWwAAP" },
@@ -21,6 +22,7 @@
                );
   }
     
+    console.log('end');
   </script>
 
   </head>
@@ -28,11 +30,11 @@
     <center>
       
       <h1>TEST SIMS</h1>
-      <iframe src="https://test.kencogroup.com/cecil/sims" width="1024" height="600"></iframe>
-      
+      <iframe src="https://test.kencogroup.com/cecil/sims/sf-login" width="1024" height="600"></iframe>
+
       <br /><br />
       <a href="#" id="login" onclick="login(); return false; ">LOG IN</a>
-      
+
     </center>
   </body>
 </html>
