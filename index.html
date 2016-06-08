@@ -10,31 +10,11 @@
 
   <script language="javascript">
     
-   
   function login(){
     console.log('start');
     
-    $.ajax({
-     url:"https://test.kencogroup.com/cecil/sims/sf-login",
-     dataType: 'jsonp', 
-     data:{ username: "blah", password:"goofy", "repEmail":"cecil.meeks@kencogroup.com","salesOpportunity":"006c000000EQNWwAAP" },
-     success:function(json){
-         $('#ilogin').refresh();
-     },
-     error:function(){
-         alert("Error");
-     }      
-});
+
     
-/*    
-    $.post( 
-                  "https://test.kencogroup.com/cecil/sims/sf-login",
-                  { username: "blah", password:"goofy", "repEmail":"cecil.meeks@kencogroup.com","salesOpportunity":"006c000000EQNWwAAP" },
-                  function(data) {
-                     $('#ilogin').refresh();
-                  }
-               );
-*/
     console.log('end');
   }
     
