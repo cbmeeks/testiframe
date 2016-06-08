@@ -16,12 +16,14 @@
     url:"https://test.kencogroup.com/cecil/sims/sf-login",
     dataType: 'jsonp', 
 
-    success:function(json){
+    success:function(data){
         //$('#ilogin').refresh();
-        alert('good');
+        alert('success');
+        $('#stage').html(data);
     },
-    error:function(){
-        alert("Error");
+    error:function(data){
+      alert('error');
+        $('#stage').html(data);
     }      
 });
 
@@ -34,6 +36,9 @@
   </head>
   <body>
     <center>
+      
+      <div id = "stage" style = "background-color:blue;">
+      </div>
       
       <h1>TEST SIMS</h1>
       <iframe src="https://test.kencogroup.com/cecil/sims" width="1024" height="600"></iframe>
