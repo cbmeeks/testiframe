@@ -3,36 +3,34 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Test SIMS-SFDC by vtamash</title>
+    <title>Testiframe by cbmeeks</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width">
 
 
   <script language="javascript">
-
+    
   function login(){
     console.log('start');
-    $.post(
-          "https://test.kencogroup.com/val/sims_web/sf-login",
-          '{ "username": "3MVG9sLbBxQYwWqvKsSDw217fEhkpzjlx9ZEQayGarfflm6GA7tGcvhGHJNHIZywiRUrje84VvVVURZJbKraM", "password":"1186605233137249662", "repEmail":"tamashevich@gmail.com", "salesOpportunity":"006c000000EQNWwAAP" }',
+    $.post( 
+          "https://test.kencogroup.com/cecil/sims/sf-login",
+          {"username": "blah", "password":"goofy", "repEmail":"cecil.meeks@kencogroup.com","salesOpportunity":"006c000000EQNWwAAP"},
           function(data) {
             console.log('Done');
-
-    var iframe = document.getElementById('simsframe');
-    iframe.src = iframe.src;
-         }
+             window.location = 'http://meeks.co/testiframe';
+          }
        );
     console.log('end');
   }
-
+    
   </script>
 
   </head>
   <body>
     <center>
-
+      
       <h1>TEST SIMS</h1>
-      <iframe id='simsframe' src="https://test.kencogroup.com/val/sims_web" width="1024" height="600"></iframe>
+      <iframe id='loginframe' src="https://test.kencogroup.com/cecil/sims" width="1024" height="600"></iframe>
 
       <br /><br />
       <a href="#" id="ilogin" onclick="login(); return false; ">LOG IN</a>
