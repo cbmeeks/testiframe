@@ -9,20 +9,7 @@
 
 
   <script language="javascript">
-    
-  function login(){
-    console.log('start');
-    $.post( 
-          "https://test.kencogroup.com/cecil/sims/sf-login",
-          {"username": "blah", "password":"goofy", "repEmail":"cecil.meeks@kencogroup.com","salesOpportunity":"006c000000EQNWwAAP"},
-          function(data) {
-            console.log('Done');
-             window.location = 'http://meeks.co/testiframe/test.html';
-          }
-       );
-    console.log('end');
-  }
-    
+  
   </script>
 
   </head>
@@ -33,7 +20,14 @@
       <iframe id='loginframe' src="https://test.kencogroup.com/cecil/sims" width="1024" height="600"></iframe>
 
       <br /><br />
-      <a href="#" id="ilogin" onclick="login(); return false; ">LOG IN</a>
+      <form enctype="application/json" method="POST" id="loginForm" target="myFrame" action="https://test.kencogroup.com/cecil/sims/sf-login">
+        <input type="text" name="username" value="blah" />
+        <input type="text" name="password" value="goofy" />
+        <input type="text" name="repEmail" value="cecil.meeks@kencogroup.com" />
+        <input type="text" name="salesOpportunity" value="006c000000EQNWwAAP" />
+        <input type="submit">
+      </form>
+      <iframe  name="myFrame" src="" width="1024" height="600"></iframe>
 
     </center>
   </body>
