@@ -6,21 +6,21 @@
     <title>Testiframe by cbmeeks</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width">
-
-
-  <script language="javascript">
-  
-  </script>
-
+    <script language="javascript">
+    </script>
   </head>
   <body>
     <center>
-      
       <h1>TEST SIMS</h1>
-      <iframe id='loginframe' src="" width="1280" height="600"></iframe>
-
+      <form enctype="application/json" target="simsFrame" method="POST" id="loginForm" action="https://test.kencogroup.com/cecil/sims/sf-login">
+        <input type="text" name="username" value="blah" />
+        <input type="text" name="password" value="goofy" />
+        <input type="text" name="repEmail" value="cecil.meeks@kencogroup.com" />
+        <input type="text" name="salesOpportunity" value="006c000000EQNWwAAP" />
+        <input type="submit">
+      </form>
+      <iframe  name="simsFrame" src="" width="1024" height="600"></iframe>
       <br /><br />
-    
     </center>
   </body>
 </html>
